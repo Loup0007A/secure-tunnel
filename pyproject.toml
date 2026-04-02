@@ -1,0 +1,18 @@
+cat > pyproject.toml << 'EOF'
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.backends.legacy:build"
+
+[project]
+name = "secure-tunnel"
+version = "1.0.0"
+requires-python = ">=3.11"
+dependencies = [
+    "cryptography>=41.0.0",
+    "websockets>=14.0",
+]
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["secure_tunnel*"]
+EOF
